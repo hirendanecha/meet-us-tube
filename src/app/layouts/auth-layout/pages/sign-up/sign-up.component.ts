@@ -97,7 +97,7 @@ export class SignUpComponent implements OnInit, AfterViewInit {
           // this.onZipChange(val);
         }
       });
-    this.loadCloudFlareWidget();
+    // this.loadCloudFlareWidget();
   }
 
   loadCloudFlareWidget() {
@@ -164,13 +164,13 @@ export class SignUpComponent implements OnInit, AfterViewInit {
   }
 
   save() {
-    const token = localStorage.getItem('captcha-token');
-    if (!token) {
-      this.msg = 'Invalid captcha kindly try again!';
-      this.type = 'danger';
-      this.scrollTop();
-      return;
-    }
+    // const token = localStorage.getItem('captcha-token');
+    // if (!token) {
+    //   this.msg = 'Invalid captcha kindly try again!';
+    //   this.type = 'danger';
+    //   this.scrollTop();
+    //   return;
+    // }
     if (this.registerForm.valid) {
       this.spinner.show();
       this.customerService.createCustomer(this.registerForm.value).subscribe({

@@ -1,6 +1,6 @@
-const url = 'https://dev-api.meetus.tube';
-const webUrl = 'https://dev.meetus.tube/';
-const tubeUrl = 'https://dev.tube.meetus.tube/';
+const url = 'https://api.meetus.tube';
+const webUrl = 'https://meetus.tube/';
+const tubeUrl = 'https://video.meetus.tube/';
 // const url = 'http://localhost:8080';
 // const webUrl = 'http://localhost:4200/';
 

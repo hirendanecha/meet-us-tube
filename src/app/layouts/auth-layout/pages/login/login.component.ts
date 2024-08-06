@@ -87,7 +87,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.loadCloudFlareWidget();
+    // this.loadCloudFlareWidget();
   }
 
   loadCloudFlareWidget() {
@@ -111,12 +111,12 @@ export class LoginComponent implements OnInit, AfterViewInit {
   }
 
   onSubmit(): void {
-    const token = localStorage.getItem('captcha-token');
-    if (!token) {
-      this.msg = 'Invalid captcha kindly try again!';
-      this.type = 'danger';
-      // return;
-    }
+    // const token = localStorage.getItem('captcha-token');
+    // if (!token) {
+    //   this.msg = 'Invalid captcha kindly try again!';
+    //   this.type = 'danger';
+    //   return;
+    // }
     if (this.loginForm.valid) {
       this.spinner.show();
       this.authService.customerlogin(this.loginForm.value).subscribe({
