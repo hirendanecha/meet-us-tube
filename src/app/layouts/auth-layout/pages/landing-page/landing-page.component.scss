@@ -31,7 +31,8 @@
     background-repeat: no-repeat;
     object-fit: cover !important;
     background-position: center;
-    height: 130vh;
+    height: calc(100vh - 76px);
+    // height: 130vh;
     // background-position: center;
     // min-height: 400px;
 
