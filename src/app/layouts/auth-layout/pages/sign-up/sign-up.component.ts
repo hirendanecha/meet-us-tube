@@ -54,12 +54,12 @@ export class SignUpComponent implements OnInit, AfterViewInit {
     Email: new FormControl('', [Validators.required]),
     Password: new FormControl('', [Validators.required]),
     confirm_password: new FormControl('', [Validators.required]),
-    MobileNo: new FormControl('', [Validators.required]),
+    MobileNo: new FormControl(''),
     Country: new FormControl('US', [Validators.required]),
     Zip: new FormControl('', [Validators.required]),
     State: new FormControl('', [Validators.required]),
-    City: new FormControl('', [Validators.required]),
-    County: new FormControl('', [Validators.required]),
+    City: new FormControl(''),
+    County: new FormControl(''),
     TermAndPolicy: new FormControl(false, Validators.required),
     Anonymous: new FormControl(false, Validators.required),
   });
@@ -228,13 +228,13 @@ export class SignUpComponent implements OnInit, AfterViewInit {
 
   onSubmit(): void {
     this.msg = '';
-    if (!this.profileImg?.file?.name) {
-      this.msg = 'Please upload profile picture';
-      this.scrollTop();
-      // return false;
-    }
+    // if (!this.profileImg?.file?.name) {
+    //   this.msg = 'Please upload profile picture';
+    //   this.scrollTop();
+    //   // return false;
+    // }
+    // this.profileImg?.file?.name &&
     if (
-      this.profileImg?.file?.name &&
       this.registerForm.valid &&
       this.registerForm.get('TermAndPolicy').value === true &&       
       this.registerForm.get('Anonymous').value === true
@@ -242,30 +242,11 @@ export class SignUpComponent implements OnInit, AfterViewInit {
       if (!this.validatepassword()) {
         return;
       }
-
-      const id = this.route.snapshot.paramMap.get('id');
-      if (this.userId) {
-        // this.updateCustomer();
-      } else {
-        // this.submitted = true;
-        this.save();
-      }
+      this.save();
     } else {
       this.msg = 'Please enter mandatory fields(*) data.';
       this.scrollTop();
-      // return false;
     }
-
-    // if (
-    //  this.registerForm.invalid ||
-    //   this.registerForm.get('termAndPolicy')?.value === false ||
-    //   !this.profileImg?.file?.name
-    // ) {
-    //   this.msg =
-    //     'Please enter mandatory fields(*) data and please check terms and conditions.';
-    //   this.scrollTop();
-    //   return false;
-    // }
   }
 
   changeCountry() {
